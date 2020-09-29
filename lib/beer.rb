@@ -4,9 +4,8 @@ class Beer
   
   @@all = []
   
-  def initialize
+  def initialize(name, id, tagline)
     @name = name
-    @image_url = image_url
     @id = id
     @tagline = tagline
     @@all << self
@@ -15,6 +14,10 @@ class Beer
   def self.all
     @@all
   end
+  
+  def self.find_by_name(name)
+    self.all.select{|beer|beer.name == name}
+    
   
   
 end
