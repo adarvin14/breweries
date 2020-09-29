@@ -1,15 +1,20 @@
 class CLI
   
   def menu
+    API.get_beers
     puts ""
-    puts "Welcome to the Beer Catalog"
+    puts "Welcome to the Punk Brewdog Recipe Catalog"
     puts "----------------"
     puts ""
-    puts "Enter a name to learn more about that beer or 'exit' to exit."
-    puts ""
-    @name = gets.strip.downcase
-    API.get_beers(@name)
     print_beers
+    puts "Enter a number to learn more about a beer you would like to brew or 'exit' to exit."
+    puts ""
+    
+    id = gets.strip.to_i-1
+    API.get_beer(id)
+      while input != "exit"
+    
+    puts ""
   end
 
   
