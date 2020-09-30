@@ -15,7 +15,7 @@ class CLI
     input = gets.strip
     Beer.find_by_id(id.to_i-1)
       while input != "exit" do
-        if input > 0 && input < 25
+        if input > 0 && input <= 25
           #print beer
           
         elsif input 
@@ -23,6 +23,10 @@ class CLI
     puts ""
     puts "----------------------------------------------------------------------------------------------------------"
     puts "If you would like to see the list of beers again, enter 'beers' or enter another number to view a different beer."
+          if input = "beers"
+            print_beers
+          else
+          end
     puts ""
         else
     puts ""

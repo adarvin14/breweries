@@ -19,8 +19,8 @@ class Beer
     self.all.select{|beer|beer.name == name}
   end
   
-  def self.find(id)
-    self.all[id-1]
+  def self.find_by_id(id)
+    self.all.to_i-1
   end
   
   def self.find_by_abv(abv)

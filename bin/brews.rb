@@ -1,3 +1,3 @@
-CLI.new.menu
+#!/usr/bin/env ruby
 
-#need shabang line
+CLI.new.menu
