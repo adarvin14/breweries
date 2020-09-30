@@ -18,13 +18,11 @@ class CLI
         if input > 0 && input < 25
           #print beer
           
-        elsif 
+        elsif input 
+    puts
     puts ""
-        
-    
-    puts ""
-    puts "---------------------------------------------------------------"
-    puts "If you would like to see the list of beers again, enter 'list'."
+    puts "----------------------------------------------------------------------------------------------------------"
+    puts "If you would like to see the list of beers again, enter 'beers' or enter another number to view a different beer."
     puts ""
         else
     puts ""
@@ -32,7 +30,11 @@ class CLI
     puts "Enter another number to view a different recipe."
     puts ""
         end
-    
+    puts ""
+    puts "-----------------------------------------"
+    puts "Come again if you want to make more beer!"
+    puts "-----------------------------------------"
+    puts ""
     end
 
   
