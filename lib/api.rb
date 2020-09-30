@@ -5,7 +5,9 @@ class API
     uri = URI(url)
     response = Net::HTTP.get(uri)
     
-    beers = JSON.parse(response)
+    beers = JSON.parse(response)["beers"].each do |b|
+        Beer.new(name: b["name"], id: b["id"], description: b["description", tagline: b["tagline"], abv: b["abv"]) if b[id] != nil
+  binding.pry
   end
   
   def self.get_beer(id)
