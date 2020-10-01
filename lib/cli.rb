@@ -15,7 +15,7 @@ class CLI
     while input != "exit" do
         if input.to_i > 0 && input.to_i <= 25
           beer = Beer.all[input.to_i]
-          print_beer(beer)
+          #print_beer(beer)
         elsif input != input.to_i || input.to_i <= 0 || input.to_i > 25
           puts
           puts ""
@@ -26,7 +26,7 @@ class CLI
           if input == "beers"
             print_beers
           elsif input.to_i > 0 && input.to_i <= 25
-            print_beer(beer)
+            #print_beer(beer)
           else
             puts ""
             puts "--------------------------------------------------------"
@@ -58,18 +58,7 @@ class CLI
     end
     
     def print_beer(beer)
-      puts "#{@id}"
-      puts "#{@name}"
-      puts "#{@tagline}"
-      puts "#{@firest_brewed}"
-      puts "#{@description}"
-      puts "#{@abv}"
-      puts "#{@ibu}"
-      puts "#{@target_fg}"
-      puts "#{@target_og}"
-      puts "#{@ph}"
-      puts "#{@ingredients}"
-      puts "#{@food_pairing}"
+      #show all the information for the beer recipe
     end
 
 end
