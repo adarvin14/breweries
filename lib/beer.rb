@@ -15,17 +15,8 @@ class Beer
     @@all
   end
   
-  def self.find_by_name(name)
-    self.all.select{|beer|beer.name == name}
-  end
-  
   def self.find_by_id(id)
     self.all.to_i-1
   end
-  
-  def self.find_by_abv(abv)
-    self.all.select{|beer|beer.abv == abv}
-  end
-  
   
 end
