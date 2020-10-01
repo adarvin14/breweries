@@ -11,32 +11,33 @@ class CLI
     puts "-----------------------------------------------------------------------------------"
     puts "Enter a number to learn more about a beer you would like to brew or 'exit' to exit."
     puts ""
-    
+    input = gets.strip
     while input != "exit" do
         if input.to_i > 0 && input.to_i <= 25
           beer = Beer.all[input.to_i]
+          print_beer(beer)
         elsif input != input.to_i || input.to_i <= 0 || input.to_i > 25
-    puts
-    puts ""
-    puts "----------------------------------------------------------------------------------------------------------"
-    puts "If you would like to see the list of beers again, enter 'beers' or enter another number to view a different beer."
-    puts ""
-    input = gets.strip.downcase
+          puts
+          puts ""
+          puts "----------------------------------------------------------------------------------------------------------"
+          puts "If you would like to see the list of beers again, enter 'beers' or enter another number to view a different beer."
+          puts ""
+          input = gets.strip.downcase
           if input == "beers"
             print_beers
           elsif input.to_i > 0 && input.to_i <= 25
-            #print_beer
+            print_beer(beer)
           else
-    puts ""
-    puts "--------------------------------------------------------"
-    puts "We can't find what you're looking for. Please try again."
-    puts ""
+            puts ""
+            puts "--------------------------------------------------------"
+            puts "We can't find what you're looking for. Please try again."
+            puts ""
           end
         else
           prompt
         end
     end
-     puts ""
+    puts ""
     puts "-----------------------------------------"
     puts "Come again if you want to make more beer!"
     puts "-----------------------------------------"
@@ -52,12 +53,23 @@ class CLI
   
     def print_beers
       Beer.all.each_with_index do |beer, i|
-        puts "#{i}. #{beer.name}"
+        puts "#{i+1}. #{beer.name}"
       end
     end
     
     def print_beer(beer)
-      #Beer.find_by_id  show recipe for selected beer
+      puts "#{@id}"
+      puts "#{@name}"
+      puts "#{@tagline}"
+      puts "#{@firest_brewed}"
+      puts "#{@description}"
+      puts "#{@abv}"
+      puts "#{@ibu}"
+      puts "#{@target_fg}"
+      puts "#{@target_og}"
+      puts "#{@ph}"
+      puts "#{@ingredients}"
+      puts "#{@food_pairing}"
     end
 
 end
