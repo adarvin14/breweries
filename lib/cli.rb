@@ -46,5 +46,9 @@ class CLI
     puts ""
     end
   end
+  
+    def print_beers
+      Beer.all.each_with_index(1) do |b, i|
+        puts "#{i}. #{b.name}"
 
 end

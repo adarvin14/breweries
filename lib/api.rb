@@ -5,16 +5,9 @@ class API
     uri = URI(url)
     response = Net::HTTP.get(uri)
     
-    beers = JSON.parse(response)["beers"].each do |b|
-        Beer.new(name: b["strBeer"], id: b["idBeer"], description: b["strBeer"], tagline: b["strBeer"], abv: b["abv"], ibu: b["ibu"], ingredients: b["ingredients"]) if b[id] != nil
+    beers = JSON.parse(response)
+    beers.each do |beer|
+        Beer.new(name: beer["name"], id: beer["id"], description: beer["description"], tagline: beer["tagline"], abv: beer["abv"], ibu: beer["ibu"], ingredients: beer["ingredients"]) if beer["id"] != ""
+    end
   end
-  
-  def self.get_beers(beer)
-    url = "https://api.punkapi.com/v2/beers/#{id}"
-    uri = URI(url)
-    response = Net::HTTP.get(uri)
-    
-    
-  end
-end
 end
