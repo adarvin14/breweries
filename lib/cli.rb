@@ -16,17 +16,17 @@ class CLI
     Beer.find_by_id(id.to_i-1)
       while input != "exit" do
         if input > 0 && input <= 25
-          API.get_beer
+          print_beer
         elsif input != i && input <= 0 && input > 25
     puts
     puts ""
     puts "----------------------------------------------------------------------------------------------------------"
     puts "If you would like to see the list of beers again, enter 'beers' or enter another number to view a different beer."
     input = gets.strip.downcase
-          if input = "beers"
+          if input == "beers"
             print_beers
           elsif input > 0 && input <= 25
-            print_beer
+            print_beers
           else
     puts ""
     puts "--------------------------------------------------------"
@@ -45,5 +45,6 @@ class CLI
     puts "-----------------------------------------"
     puts ""
     end
+  end
 
 end
