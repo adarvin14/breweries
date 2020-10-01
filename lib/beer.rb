@@ -24,8 +24,8 @@ class Beer
     @@all
   end
   
-  def self.find_by_id(id)
-    #self.all.to_i-1
+  def self.find_by_id(id.to_i)
+    self.all.to_i-1
   end
   
 end

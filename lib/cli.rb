@@ -13,11 +13,10 @@ class CLI
     puts ""
     
     input = gets.strip
-    Beer.find_by_id(id.to_i-1)
       while input != "exit" do
-        if input > 0 && input <= 25
+        if input.to_i > 0 && input.to_i <= 25
           print_beer
-        elsif input != i && input <= 0 && input > 25
+        elsif input != input.to_i || input.to_i <= 0 || input.to_i > 25
     puts
     puts ""
     puts "----------------------------------------------------------------------------------------------------------"
@@ -25,7 +24,7 @@ class CLI
     input = gets.strip.downcase
           if input == "beers"
             print_beers
-          elsif input > 0 && input <= 25
+          elsif input.to_i > 0 && input.to_i <= 25
             print_beers
           else
     puts ""
@@ -39,16 +38,22 @@ class CLI
     puts "Enter another number to view a different recipe."
     puts ""
         end
-    puts ""
+    end
+     puts ""
     puts "-----------------------------------------"
     puts "Come again if you want to make more beer!"
     puts "-----------------------------------------"
     puts ""
-    end
   end
   
     def print_beers
-      Beer.all.each_with_index(1) do |b, i|
-        puts "#{i}. #{b.name}"
+      Beer.all.each_with_index do |beer, i|
+        puts "#{i}. #{beer.name}"
+      end
+    end
+    
+    def print_beer
+      Beer.find_by_id
+    end
 
 end
