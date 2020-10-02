@@ -16,8 +16,8 @@ class CLI
         if input.to_i > 0 && input.to_i <= 25
           beer = Beer.all[input.to_i-1]
           print_beer(beer)
+        input = gets.strip
         elsif input != input.to_i || input.to_i <= 0 || input.to_i > 25
-          puts
           puts ""
           puts "----------------------------------------------------------------------------------------------------------"
           puts "If you would like to see the list of beers again, enter 'beers' or enter a different number to learn another beer."
@@ -25,8 +25,10 @@ class CLI
           input = gets.strip.downcase
           if input == "beers"
             print_beers
-            elsif input.to_i > 0 && input.to_i <= 25
-              print_beer(beer)
+          input = gets.strip
+          elsif input.to_i > 0 && input.to_i <= 25
+            print_beer(beer)
+          input = gets.strip
           elsif input != "exit" || input.to_i <= 0 || input.to_i > 25
             puts ""
             puts "--------------------------------------------------------"
@@ -35,6 +37,7 @@ class CLI
           end
         else
           prompt
+          input = gets.strip
         end
     end
     puts ""
@@ -67,7 +70,6 @@ class CLI
       puts "Description: #{beer.description}"
       puts ""
       puts "Alcohol By Volume: #{beer.abv}"
-      puts ""
       puts ""
       puts "Bitterness(IBU): #{beer.ibu}"
       puts ""
