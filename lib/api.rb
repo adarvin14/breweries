@@ -7,7 +7,7 @@ class API
     
     beers = JSON.parse(response)
     beers.each do |beer|
-        Beer.new(id: beer["id"], name: beer["name"], tagline: beer["tagline"], first_brewed: beer["first_brewed"], description: beer["description"], abv: beer["abv"], ibu: beer["ibu"], ph: beer["ph"], ingredients: beer["ingredients"], food_pairing: ["food_pairing"]) if beer["id"] != ""
+        Beer.new(id: beer["id"], name: beer["name"], tagline: beer["tagline"], first_brewed: beer["first_brewed"], description: beer["description"], abv: beer["abv"], ibu: beer["ibu"], ph: beer["ph"], ingredients: beer["ingredients"]) if beer["id"] != ""
     end
   end
 end

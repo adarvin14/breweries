@@ -77,7 +77,5 @@ class CLI
       puts ""
       puts "Ingredients: #{beer.ingredients}"
       puts ""
-      puts "Food Pairing: #{beer.food_pairing}"
-      puts ""
     end
 end

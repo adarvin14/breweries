@@ -1,6 +1,6 @@
 class Beer
   
-  attr_accessor :id, :name, :tagline, :first_brewed, :description, :abv, :ibu, :ph, :ingredients, :food_pairing
+  attr_accessor :id, :name, :tagline, :first_brewed, :description, :abv, :ibu, :ph, :ingredients
   
   @@all = []
   
@@ -14,7 +14,7 @@ class Beer
     @ibu = attr_hash[:ibu]
     @ph = attr_hash[:ph]
     @ingredients = attr_hash[:ingredients]
-    @food_pairing = attr_hash[:food_pairing]
+    
     @@all << self
   end
   
