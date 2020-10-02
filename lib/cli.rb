@@ -20,12 +20,14 @@ class CLI
           puts
           puts ""
           puts "----------------------------------------------------------------------------------------------------------"
-          puts "If you would like to see the list of beers again, enter 'beers' or 'exit' to exit"
+          puts "If you would like to see the list of beers again, enter 'beers' or enter a different number to learn another beer."
           puts ""
           input = gets.strip.downcase
           if input == "beers"
             print_beers
-          elsif input != "exit"
+            elsif input.to_i > 0 && input.to_i <= 25
+              print_beer(beer)
+          elsif input != "exit" || input.to_i <= 0 || input.to_i > 25
             puts ""
             puts "--------------------------------------------------------"
             puts "We can't find what you're looking for. Please try again."
