@@ -27,7 +27,7 @@ class CLI
             print_beers
           elsif input.to_i > 0 && input.to_i <= 25
             #print_beer(beer)
-          else
+          elsif input != "exit"
             puts ""
             puts "--------------------------------------------------------"
             puts "We can't find what you're looking for. Please try again."
@@ -58,7 +58,7 @@ class CLI
     end
     
     def print_beer(beer)
-      #show all the information for the beer recipe
+      #display the recipe for the selected beer
     end
 
 end
