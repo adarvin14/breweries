@@ -59,13 +59,23 @@ class CLI
     
     def print_beer(beer)
       puts "Name: #{beer.name}"
+      puts ""
       puts "Tagline: #{beer.tagline}"
+      puts ""
       puts "First Brewed: #{beer.first_brewed}"
+      puts ""
       puts "Description: #{beer.description}"
+      puts ""
       puts "Alcohol By Volume: #{beer.abv}"
+      puts ""
+      puts ""
       puts "Bitterness(IBU): #{beer.ibu}"
+      puts ""
       puts "ph: #{beer.ph}"
+      puts ""
       puts "Ingredients: #{beer.ingredients}"
+      puts ""
       puts "Food Pairing: #{beer.food_pairing}"
+      puts ""
     end
 end
