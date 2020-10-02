@@ -14,9 +14,8 @@ class CLI
     input = gets.strip
     while input != "exit" do
         if input.to_i > 0 && input.to_i <= 25
-          beer = Beer.all[input.to_i]
-          binding.pry
-          #print_beer
+          beer = Beer.all[input.to_i-1]
+          print_beer(beer)
         elsif input != input.to_i || input.to_i <= 0 || input.to_i > 25
           puts
           puts ""
@@ -27,7 +26,7 @@ class CLI
           if input == "beers"
             print_beers
           elsif input.to_i > 0 && input.to_i <= 25
-            #print_beer
+            print_beer(beer)
           elsif input != "exit"
             puts ""
             puts "--------------------------------------------------------"
@@ -54,13 +53,11 @@ class CLI
   
     def print_beers
       Beer.all.each_with_index do |beer, i|
-        puts "#{i+1}. #{beer.name}"
+        puts "#{i}. #{beer.name}"
       end
     end
     
-    def print_beer(i)
-      Beer.name
-      Beer.tagline
-      Beer.description
-      Beer.
+    #def print_beer(beer)
+    
+    #end
 end
