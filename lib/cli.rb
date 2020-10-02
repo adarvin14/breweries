@@ -20,13 +20,11 @@ class CLI
           puts
           puts ""
           puts "----------------------------------------------------------------------------------------------------------"
-          puts "If you would like to see the list of beers again, enter 'beers' or enter another number to view a different beer."
+          puts "If you would like to see the list of beers again, enter 'beers' or 'exit' to exit"
           puts ""
           input = gets.strip.downcase
           if input == "beers"
             print_beers
-          elsif input.to_i > 0 && input.to_i <= 25
-            print_beer(beer)
           elsif input != "exit"
             puts ""
             puts "--------------------------------------------------------"
@@ -53,7 +51,7 @@ class CLI
   
     def print_beers
       Beer.all.each_with_index do |beer, i|
-        puts "#{i}. #{beer.name}"
+        puts "#{i+1}. #{beer.name}"
       end
     end
     
