@@ -8,7 +8,7 @@ How To Start
 Insall the following gems by entering the following into the terminal:
 gem install 'pry'
 gem install 'json'
-gem install 'httaparty'
+gem install 'httparty'
 
 Once these are installed, you can start the application with the following:
 Run 'ruby'
