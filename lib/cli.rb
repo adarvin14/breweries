@@ -19,8 +19,8 @@ class CLI
         input = gets.strip
         elsif input != input.to_i || input.to_i <= 0 || input.to_i > 25
           puts ""
-          puts "----------------------------------------------------------------------------------------------------------"
-          puts "If you would like to see the list of beers again, enter 'beers' or enter a different number to learn another beer."
+          puts "------------------------------------------------------------------------------------"
+          puts "If you would like to see the list of beers again, enter 'beers' or enter a different number to learn about another beer."
           puts ""
           input = gets.strip.downcase
           if input == "beers"
@@ -29,10 +29,10 @@ class CLI
           elsif input.to_i > 0 && input.to_i <= 25
             print_beer(beer)
           input = gets.strip
-          elsif input != "exit" || input.to_i <= 0 || input.to_i > 25
+          elsif input != input.to_i || input.to_i <= 0 || input.to_i > 25
             puts ""
             puts "--------------------------------------------------------"
-            puts "We can't find what you're looking for. Please try again."
+            puts "I didn't understand that. Please try again."
             puts ""
           end
         else

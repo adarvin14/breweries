@@ -5,7 +5,7 @@ Introduction
 Welcome to the BeerPunk CLI application, 
 
 How To Start
-Insall the following gems by entering the following into the terminal:
+Install the following gems by entering the following into the terminal:
 gem install 'pry'
 gem install 'json'
 gem install 'httparty'
