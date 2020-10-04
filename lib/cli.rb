@@ -11,7 +11,7 @@ class CLI
     puts "-----------------------------------------------------------------------------------"
     puts "Enter a number to learn more about a beer you would like to brew or 'exit' to exit."
     puts ""
-    input = gets.strip
+    input = gets.strip.downcase
     while input != "exit" do
         if input.to_i > 0 && input.to_i <= 25
           beer = Beer.all[input.to_i-1]
@@ -20,20 +20,15 @@ class CLI
         elsif input != input.to_i || input.to_i <= 0 || input.to_i > 25
           puts ""
           puts "------------------------------------------------------------------------------------"
-          puts "If you would like to see the list of beers again, enter 'beers' or enter a different number to learn about another beer."
+          puts "I didn't get that. If you would like to see the list of beers again, enter 'beers' or enter a different number to learn about another beer."
           puts ""
           input = gets.strip.downcase
-          if input == "beers"
+          if input == 'beers'
             print_beers
           input = gets.strip
           elsif input.to_i > 0 && input.to_i <= 25
+            beer = Beer.all[input.to_i-1]
             print_beer(beer)
-          input = gets.strip
-          elsif input != input.to_i || input.to_i <= 0 || input.to_i > 25
-            puts ""
-            puts "--------------------------------------------------------"
-            puts "I didn't understand that. Please try again."
-            puts ""
           end
         else
           prompt
@@ -60,22 +55,22 @@ class CLI
       end
     end
     
-    def print_beer(beer)
-      puts "Name: #{beer.name}"
+    def print_beer(input)
+      puts "Name: #{input.name}"
       puts ""
-      puts "Tagline: #{beer.tagline}"
+      puts "Tagline: #{input.tagline}"
       puts ""
-      puts "First Brewed: #{beer.first_brewed}"
+      puts "First Brewed: #{input.first_brewed}"
       puts ""
-      puts "Description: #{beer.description}"
+      puts "Description: #{input.description}"
       puts ""
-      puts "Alcohol By Volume: #{beer.abv}"
+      puts "Alcohol By Volume: #{input.abv}"
       puts ""
-      puts "Bitterness(IBU): #{beer.ibu}"
+      puts "Bitterness(IBU): #{input.ibu}"
       puts ""
-      puts "ph: #{beer.ph}"
+      puts "ph: #{input.ph}"
       puts ""
-      puts "Ingredients: #{beer.ingredients}"
+      puts "Ingredients: #{input.ingredients}"
       puts ""
     end
 end
