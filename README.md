@@ -1,11 +1,26 @@
+BEER PUNK CLI Project
+Version 1.0.0 // October 2020
 
-Hi! 👋
+Introduction
+Welcome to the BeerPunk CLI application, 
 
-You've opened the IDE Sandbox, an environment that you can access on "readme" and "code-along" lessons in Learn. It's a great place to experiment with code! 🎉
+How To Start
+Insall the following gems by entering the following into the terminal:
+gem install 'pry'
+gem install 'json'
+gem install 'httaparty'
 
-*IMPORTANT*
-Saving varies by the type of work you are doing:
--- Most of the work you do in the Sandbox is automatically saved on your behalf to the `learn-co-sandbox` repository in your GitHub account. Please DO NOT touch this repository in GitHub. Doing so will affect your Sandbox experience, and potentially cause your work to fall out of sync.
--- *Git repositories that you clone into the Sandbox are NOT automatically saved.* In this case, you are responsible for committing and pushing your work to GitHub. 
+Once these are installed, you can start the application with the following:
+Run 'ruby'
+Run 'ruby bin/brews'
 
-To learn more about the Sandbox, please visit http://help.learn.co/technical-support/learn-ide-in-browser/ide-in-browser-sandbox
+Follow the instructions given in the terminal and enjoy making some beer!
+
+References
+Visit https://github.com/adarvin14/breweries to see more.
+
+License & Copyright
+The project is available as open source under the terms of the MIT License
+
+Contributors
+Alex Darvin - amdarvin14@gmail.com
