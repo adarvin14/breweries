@@ -1,4 +1,4 @@
-BEER PUNK CLI Project
+BEER PUNK Brewing CLI Project
 Version 1.0.0 // October 2020
 
 Introduction
