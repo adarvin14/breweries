@@ -16,25 +16,25 @@ class Ingredient
   end
   
   #iterate through each instance of malt and hops and print the name and amount (w/ units)
-  ingredients.each do |type, value|
-    if type == "malt"
-      type.each do |name, amount|
-        puts "#{name}"
-        value = amount[:value]
-        unit = amount[:unit]
-        puts "#{value} #{unit}"
-      end 
-    elsif type == "hops"
-        hops.each do |object|
-        puts hops[:name]
-        amount = hops[:amount]
-        puts amount[:value]
-        puts amount[:unit]
-      end
-    elsif type == "yeast"
-        puts "#{value}"
-      end
-    end
+  # beer.ingredients.each do |type, value|
+  #   if type == "malt"
+  #     type.each do |name, amount|
+  #       puts "#{name}"
+  #       value = amount[:value]
+  #       unit = amount[:unit]
+  #       puts "#{value} #{unit}"
+  #     end 
+  #   elsif type == "hops"
+  #       hops.each do |object|
+  #       puts hops[:name]
+  #       amount = hops[:amount]
+  #       puts amount[:value]
+  #       puts amount[:unit]
+  #     end
+  #   elsif type == "yeast"
+  #       puts "#{value}"
+  #     end
+  #   end
     
   
   # ingredients = {

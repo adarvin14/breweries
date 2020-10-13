@@ -70,15 +70,35 @@ class CLI
       puts ""
       puts "ph: #{beer.ph}"
       puts ""
-      puts "Ingredients: #{beer.ingredients}"
-      #puts Malt
-      
+      puts "Ingredients:"
+      display_ingredients(beer)
       puts ""
     end
     
     #ingredients.each do |malt|
       
-    
-    
+    def display_ingredients(beer)
+      #beer.ingredients.each do |value|
+      if beer.ingredients == "malt"
+        ingredients.each do |ingr|
+          puts "#{ingr["name"]}"
+          value = amount["value"]
+          unit = amount["unit"]
+          puts "#{amount["value"]} #{amount["unit"]}"
+          
+        end 
+      elsif beer.ingredients == "hops"
+          ingredients.each do |ingr|
+          puts ingr["name"]
+          amount = ingr["amount"]
+          puts amount["value"]
+          puts amount["unit"]
+          puts ingr["add"]
+          puts ingr["attribute"]
+        end
+      elsif beer.ingredients == "yeast"
+          puts "#{value}"
+        end
+      end
     
 end
