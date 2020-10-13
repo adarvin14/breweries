@@ -71,6 +71,14 @@ class CLI
       puts "ph: #{beer.ph}"
       puts ""
       puts "Ingredients: #{beer.ingredients}"
+      #puts Malt
+      
       puts ""
     end
+    
+    #ingredients.each do |malt|
+      
+    
+    
+    
 end

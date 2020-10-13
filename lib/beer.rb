@@ -14,6 +14,7 @@ class Beer
     @ibu = attr_hash[:ibu]
     @ph = attr_hash[:ph]
     @ingredients = attr_hash[:ingredients]
+    @ingredients = Ingredient.new(attr_hash[:ingredients])
     
     @@all << self
   end
@@ -21,5 +22,7 @@ class Beer
   def self.all
     @@all
   end
+  
+  
   
 end
