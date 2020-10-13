@@ -15,31 +15,40 @@ class Ingredient
     @@all
   end
   
-  #iterate through each instance of malt and print the name
+  #iterate through each instance of malt and hops and print the name and amount (w/ units)
   ingredients.each do |type, value|
-    # if type == "malt"
-    #   type.each do |name, amount|
-    #     puts "#{name}"
-    #     value = amount[:value]
-    #     unit = amount[:unit]
-    #     puts "#{value} #{unit}"
+    if type == "malt"
+      type.each do |name, amount|
+        puts "#{name}"
+        value = amount[:value]
+        unit = amount[:unit]
+        puts "#{value} #{unit}"
+      end 
+    elsif type == "hops"
+        hops.each do |object|
+        puts hops[:name]
+        amount = hops[:amount]
+        puts amount[:value]
+        puts amount[:unit]
+      end
+    elsif type == "yeast"
+        puts "#{value}"
+      end
+    end
     
   
-    
-  #iterate through each instance of malt and print the amount
-   
-  
-  # #ingredients = {
-  #   #"malt"=>[
-  #     {:malt =>"#{name}", "amount"=>{"value"=> "#{value}", "unit"=>"#{unit}"}
+  # ingredients = {
+  #   "malt": [
+  #     {:malt: "#{name}", "amount": {"value"=> "#{value}", "unit": "#{unit}"}
   #   ]
   #   ,
-  #   "hops"=>[
-  #     {"name"=>"Centennial", "amount"=>{"value"=>5, "unit"=>"grams"},
-  #     "add"=>"#{add}", "attribute"=>"#{attribute}"},
+  #     "hops": [
+  #       {:hops: "#{name}", "amount": {"value": "#{value}", "unit": "#{unit}"},
+  #       "add": "#{add}", "attribute": "#{attribute}"},
   #   ],
-  #   "yeast"=>"#{yeast}"
-  # }
+  #     "yeast": "#{yeast}"
+  #   }
+  # end
 
 
 end
