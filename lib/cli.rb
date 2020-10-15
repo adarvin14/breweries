@@ -70,35 +70,38 @@ class CLI
       puts ""
       puts "ph: #{beer.ph}"
       puts ""
-      puts "Ingredients:"
-      display_ingredients(beer)
+      puts "Ingredients: "
+      display(beer)
       puts ""
     end
     
     #ingredients.each do |malt|
       
-    def display_ingredients(beer)
-      #beer.ingredients.each do |value|
+    def display(beer)
+      #iterate through the list of ingredients and print each individual malt & hops ingredient w the name and amount of the ingredient
+      beer.ingredients.each do |malt, hops, yeast|
       if beer.ingredients == "malt"
-        ingredients.each do |ingr|
-          puts "#{ingr["name"]}"
+        ingredients.malt.each do |ingr|
+          puts "-------------------------"
+          puts "Malt: #{ingr[name]}"
           value = amount["value"]
           unit = amount["unit"]
           puts "#{amount["value"]} #{amount["unit"]}"
-          
+          binding.pry
         end 
       elsif beer.ingredients == "hops"
-          ingredients.each do |ingr|
-          puts ingr["name"]
+        ingredients.hops.each do |ingr|
+          puts "-------------------------"
+          puts "Hops: #{ingr["name"]}"
           amount = ingr["amount"]
-          puts amount["value"]
-          puts amount["unit"]
-          puts ingr["add"]
-          puts ingr["attribute"]
+          puts "#{amount["value"]} #{amount["unit"]}"
+          puts "Add at: #{ingr["add"]}"
+          puts "Used for: #{ingr["attribute"]}"
         end
       elsif beer.ingredients == "yeast"
-          puts "#{value}"
+          puts "#{name}"
         end
       end
+    end
     
 end
