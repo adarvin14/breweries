@@ -79,29 +79,32 @@ class CLI
       
     def display(beer)
       #iterate through the list of ingredients and print each individual malt & hops ingredient w the name and amount of the ingredient
-      beer.ingredients.each do |malt, hops, yeast|
-      if beer.ingredients == "malt"
-        ingredients.malt.each do |ingr|
-          puts "-------------------------"
-          puts "Malt: #{ingr[name]}"
-          value = amount["value"]
-          unit = amount["unit"]
-          puts "#{amount["value"]} #{amount["unit"]}"
-          binding.pry
-        end 
-      elsif beer.ingredients == "hops"
-        ingredients.hops.each do |ingr|
-          puts "-------------------------"
-          puts "Hops: #{ingr["name"]}"
-          amount = ingr["amount"]
-          puts "#{amount["value"]} #{amount["unit"]}"
-          puts "Add at: #{ingr["add"]}"
-          puts "Used for: #{ingr["attribute"]}"
-        end
-      elsif beer.ingredients == "yeast"
-          puts "#{name}"
+      # beer.ingredients.each do |malt, hops, yeast|
+      # if beer.ingredients == "malt"
+        beer.ingredients.each do |ingr|
+          if ingr[0] == "malt"
+            ingr[1].each do |i|
+              puts "-------------------------"
+              puts "Malt: #{i["name"]}"
+              amount = i["amount"]
+              value = amount["value"]
+              unit = amount["unit"]
+              puts "#{amount["value"]} #{amount["unit"]}"
+            end
+          elsif ingr[0] == "hops"
+            ingr[1].each do |i|
+              puts "-------------------------"
+              puts "Hops: #{i["name"]}"
+              amount = i["amount"]
+              puts "#{amount["value"]} #{amount["unit"]}"
+              puts "Add at: #{i["add"]}"
+              puts "Used for: #{i["attribute"]}"
+            end
+          elsif ingr[0] == "yeast"
+              puts "-------------------------"
+              puts "Yeast:#{ingr[1]}"
+          end
         end
       end
-    end
     
 end
